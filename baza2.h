@@ -25,7 +25,7 @@ class baza{
 			out<<s1.get_number()<<" ";
 			out<<s1.get_article()<<" ";
 			out<<s1.get_judge()<<" ";
-			out<<s1.get_assused()<<" ";
+			out<<s1.get_assused()<<"\n";
 			return out;
 		}
 		friend istream &operator>>(istream &in, baza &s1) {
@@ -42,7 +42,7 @@ class baza{
 			in>>arti;
 			getline(in, buf1, ' ');
 			getline(in, ju, ' ');
-			getline(in, assu, ' ');
+			getline(in, assu);
 			in.get();
 
 			s1.set_number(num);

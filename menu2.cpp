@@ -51,7 +51,7 @@ void Menu::call_menu(Funks &s1){
 
 		    case 5:
 		    	s1.load_from_file();
-		        s1.remove_court_cases();
+		    	s1.remove_court_cases();
 		        break;
 		}
 
