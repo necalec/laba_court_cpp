@@ -22,29 +22,30 @@ class baza{
 		void set_assused(string s_assused){assused = s_assused;}
 
 		friend ostream &operator<<(ostream &out, baza &s1) {
-			out<<s1.get_number()<<" ";
-			out<<s1.get_article()<<" ";
-			out<<s1.get_judge()<<" ";
-			out<<s1.get_assused()<<"\n";
+		
+			out<<s1.get_number()<<endl;
+			out<<s1.get_article()<<endl;
+			out<<s1.get_judge()<<endl;
+			out<<s1.get_assused()<<endl;
 			return out;
 		}
 		friend istream &operator>>(istream &in, baza &s1) {
-
+		
 			string buf1;
-
+			
 			int num;
 			int arti;
 			string ju;
 			string assu;
 
-			in>> num; 
-			getline(in, buf1, ' ');
+			in>>num; 
+			in.ignore();
 			in>>arti;
-			getline(in, buf1, ' ');
-			getline(in, ju, ' ');
+			getline(in, buf1);
+			getline(in, ju);
 			getline(in, assu);
-			in.get();
-
+			cin.ignore(1, '\n');
+			
 			s1.set_number(num);
 			s1.set_article(arti);
 			s1.set_judge(ju);
@@ -53,3 +54,6 @@ class baza{
 			return in;
 		}
 };
+
+
+

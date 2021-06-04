@@ -10,11 +10,11 @@ Funks::Funks(char *f_name){
 }
 
 void Funks::print_court_cases(){
-	f.open(fname, ios::out);
 	for (int i = 0; i < n; i++){
 		cout<<i<<". ";
 		cout<<court_cases[i]<<endl;
 	}
+	delete [] court_cases;
 }
 
 void Funks::add_court_cases(){
@@ -127,9 +127,7 @@ void Funks::load_from_file(){
 		getline(f, buffer);
 		n++;
 	}
-	f.close();
-	
-	f.open(fname, ios::out);
+	n=n/4;
 	court_cases = new baza [n];
 	for (int i = 0; i < n; i++) {
 		f>>court_cases[i];
